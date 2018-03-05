@@ -1,4 +1,4 @@
-package ru.liga;
+package ru.liga.fromuml;
 
 /**
  * Hello world!
