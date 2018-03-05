@@ -10,6 +10,7 @@
 
     <modules>
         <module>javacore-final</module>
+        <module>javacore-from-uml</module>
     </modules>
 
     <name>java-internship</name>
