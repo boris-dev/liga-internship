@@ -21,7 +21,9 @@ import java.util.TreeSet;
  * Created by Lenovo on 15.08.2017.
  */
 public class SimpleMidiFile {
+
     private MidiFile midiFile;
+
     public SimpleMidiFile(String base64EncodedString) {
         try {
             InputStream is = new ByteArrayInputStream(Base64.decodeBase64(base64EncodedString.getBytes()));
@@ -92,9 +94,6 @@ public class SimpleMidiFile {
     }
 
 
-
-
-
     private List<Integer> createTransponationScheme(Integer toHighNoteCount, Integer toLowNoteCount) {
         List<Integer> transponationScheme = new ArrayList<>();
         for (int i = 1; i <= toHighNoteCount; i++) {
@@ -149,11 +148,13 @@ public class SimpleMidiFile {
     }
 
     private MidiEvent createEvent(NoteOn noteOn, Long currentTick, int transponation) {
-        return new NoteOn(currentTick + noteOn.getTick(), noteOn.getChannel(), noteOn.getNoteValue() + transponation, noteOn.getVelocity());
+        return new NoteOn(currentTick + noteOn.getTick(), noteOn.getChannel(),
+                noteOn.getNoteValue() + transponation, noteOn.getVelocity());
     }
 
     private MidiEvent createEvent(NoteOff noteOff, Long currentTick, int transponation) {
-        return new NoteOff(currentTick + noteOff.getTick(), noteOff.getChannel(), noteOff.getNoteValue() + transponation, noteOff.getVelocity());
+        return new NoteOff(currentTick + noteOff.getTick(), noteOff.getChannel(),
+                noteOff.getNoteValue() + transponation, noteOff.getVelocity());
     }
 
     public Long durationMs() {
