@@ -190,5 +190,4 @@ public enum NoteSign {
     public String shortName() {
         return noteName;
     }
-
 }

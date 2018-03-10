@@ -1,7 +1,7 @@
 package ru.liga;
 
 import ru.liga.songtask.content.Content;
-import ru.liga.songtask.domain.HomeTaskMidiFileAnalysis;
+import ru.liga.songtask.domain.SimpleMidiFile;
 
 /**
  * Всего нот: 15
@@ -29,10 +29,8 @@ import ru.liga.songtask.domain.HomeTaskMidiFileAnalysis;
  */
 public class App {
     public static void main(String[] args) {
-    HomeTaskMidiFileAnalysis homeTaskMidiFileAnalysis = new HomeTaskMidiFileAnalysis(Content.ZOMBIE);
-    homeTaskMidiFileAnalysis.printFullAnalysOfNotes();
-
-
-
+        SimpleMidiFile simpleMidiFile = new SimpleMidiFile(Content.ZOMBIE);
+        System.out.println("Количество нот: " + simpleMidiFile.vocalNoteList().size());
+        System.out.println("Длительность (сек): " + simpleMidiFile.durationMs() / 1000);
     }
 }
