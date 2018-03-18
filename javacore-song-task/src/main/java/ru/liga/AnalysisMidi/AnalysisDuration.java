@@ -5,22 +5,24 @@ import ru.liga.songtask.domain.SimpleMidiFile;
 import java.util.HashMap;
 import java.util.Map;
 
+ class note {
+    Long time;
+    int count;
+
+    note(Long ThatTime, int ThatCount) {
+        this.count = ThatCount;
+        this.time = ThatTime;
+    }
+}
+
 public class AnalysisDuration {
     private final SimpleMidiFile simpleMidiFile;
     public AnalysisDuration(SimpleMidiFile simpleMidiFile) {
         this.simpleMidiFile = simpleMidiFile;
     }
 
-    public String GetAnalysis() {
-        class note {
-            Long time;
-            int count;
+    public Map<Float, Integer> GetAnalysis() {
 
-            note(Long ThatTime, int ThatCount) {
-                this.count = ThatCount;
-                this.time = ThatTime;
-            }
-        }
         Map<String, note> hashMapNoteTime = new HashMap<>();
 
         for (int i = 0; i < simpleMidiFile.vocalNoteList().size(); i++) {
@@ -42,6 +44,12 @@ public class AnalysisDuration {
             ResultStr += hashMapNoteTime.get(entry.getKey()).time * simpleMidiFile.tickInMs() + " : " + hashMapNoteTime.get(entry.getKey()).count + "\r\n";
 
         }
-    return "Анализ длительности нот (мс):" + "\r\n" + ResultStr;
+        Map<Float, Integer> returnhashMapNote = new HashMap<>();
+        for (Map.Entry entry : hashMapNoteTime.entrySet()) {
+            ResultStr += hashMapNoteTime.get(entry.getKey()).time * simpleMidiFile.tickInMs() + " : " + hashMapNoteTime.get(entry.getKey()).count + "\r\n";
+            returnhashMapNote.put(hashMapNoteTime.get(entry.getKey()).time * simpleMidiFile.tickInMs(),hashMapNoteTime.get(entry.getKey()).count);
+        }
+        return returnhashMapNote;
+    //return "Анализ длительности нот (мс):" + "\r\n" + ResultStr;
     }
 }

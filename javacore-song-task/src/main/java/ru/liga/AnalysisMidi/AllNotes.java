@@ -21,7 +21,7 @@ public class AllNotes {
                 list_note.add(simpleMidiFile.vocalNoteList().get(i).sign());
 
         }
-        return "Всего нот: " + list_note.size() + "\r\n";
+        return "Всего нот: " + list_note.size();
     }
     public ArrayList<NoteSign> GetListNotes()
     {

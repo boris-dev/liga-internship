@@ -52,11 +52,7 @@ public class App {
     public static void main(String[] args) {
 
         SimpleMidiFile simpleMidiFile = new SimpleMidiFile(Content.ZOMBIE);
-       /* AllNotes allNotes = new AllNotes(simpleMidiFile);
-        AnalysisDiapoz analysisDiapoz = new AnalysisDiapoz(simpleMidiFile);
-        AnalysisInterval analysisInterval = new AnalysisInterval(simpleMidiFile);
-        AnalysisHeight analysisHeight= new AnalysisHeight(simpleMidiFile);
-        AnalysisDuration analysisDuration = new AnalysisDuration(simpleMidiFile);*/
+
     if (args.length==3)
     {
         if (args[0].equals("C:\\zombie.mid") && args[1].equals("analyze") && args[2].equals("-f"))
@@ -85,38 +81,8 @@ public class App {
             }
         }
 
-/////////////////////////////////////////////////////////////////////////////////////// ВСЕГО нот
-       // AllNotes allNotes = new AllNotes(simpleMidiFile);
-        //System.out.print(allNotes.GetAnalisis());
-////////////////////////////////////////////////////////////////////////////////////Анализ диапозона
-       // AnalysisDiapoz diapozon = new AnalysisDiapoz(simpleMidiFile);
-       // System.out.print(diapozon.GetAnalysis());
-        //////////////////////////////////////////////////Анализ интервалов:
 
-       // AnalysisInterval analysisInterval = new AnalysisInterval(simpleMidiFile);
-       // System.out.print(analysisInterval.GetAnalysis());
-//////////////////////////////////////////////////////////////////////////////////////////Анализ нот по высоте:
 
-      //  AnalysisHeight n= new AnalysisHeight(simpleMidiFile);
-      //  System.out.print(n.GetAnalysis());
-//////////////////////////////////////////////////////////////////////////////////////////Анализ длительности нот (мс):
-      //  AnalysisDuration x= new AnalysisDuration(simpleMidiFile);
-       // System.out.print(x.GetAnalysis());
-
-        //////////////////////////////lesson4 class work
-
-        /*try {
-            Files.write(Paths.get("C:\\Users\\ishun\\Desktop\\ЛИГА ЭКОНОМИКИ\\lesson_4\\file.txt"), data.getBytes());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
-       /* try (PrintStream out = new PrintStream(new FileOutputStream("C:\\\\Users\\\\ishun\\\\Desktop\\\\ЛИГА ЭКОНОМИКИ\\\\lesson_4\\\\file.txt"))) {
-            out.println(data);
-        }catch (IOException e) {
-            e.printStackTrace();
-        }*/
-        /////////с помощью логов
-        //logger.info(data);
 
     }
 }

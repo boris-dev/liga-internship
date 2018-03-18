@@ -12,7 +12,7 @@ public class AnalysisInterval {
         this.simpleMidiFile=simpleMidiFile;
     }
 
-    public String GetAnalysis()
+    public Map<Integer, Integer> GetAnalysis()
     {
         Map<Integer, Integer> hashMapInterval = new HashMap<>();
         int interval;
@@ -27,6 +27,7 @@ public class AnalysisInterval {
             ResultStr += entry.getKey() + " : "
                     + entry.getValue()  + "\r\n";
         }
-        return "Анализ интервалов:" + "\r\n" + ResultStr;
+        return hashMapInterval;
+        //return "Анализ интервалов:" + "\r\n" + ResultStr;
     }
 }

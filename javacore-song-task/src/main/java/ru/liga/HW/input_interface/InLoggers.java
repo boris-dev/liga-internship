@@ -7,6 +7,10 @@ import ru.liga.songtask.domain.SimpleMidiFile;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class InLoggers {
     private final SimpleMidiFile simpleMidiFile;
     private static Logger logger = LoggerFactory.getLogger(App.class);
@@ -23,10 +27,30 @@ public class InLoggers {
         AnalysisDuration analysisDuration = new AnalysisDuration(simpleMidiFile);
 
         logger.info(allNotes.GetAnalisis());
-        logger.info(analysisDiapoz.GetAnalysis());
-        logger.info(analysisInterval.GetAnalysis());
-        logger.info(analysisHeight.GetAnalysis());
-        logger.info(analysisDuration.GetAnalysis());
+        logger.info("Верхняя: " + analysisDiapoz.GetAnalysis().get(0));
+        logger.info("нижняя: " + analysisDiapoz.GetAnalysis().get(1));
+        logger.info("Диапозон: " + analysisDiapoz.GetAnalysis().get(2));
+        String ResultStr = "";
+        for (Map.Entry entry : analysisInterval.GetAnalysis().entrySet()) {
+            ResultStr += entry.getKey() + " : "
+                    + entry.getValue()  + "\r\n";
+        }
+        logger.info("Анализ интервалов:" + "\r\n" + ResultStr);
+        ResultStr = "";
+        for (Map.Entry entry : analysisHeight.GetAnalysis().entrySet()) {
+            ResultStr += entry.getKey() + " : "
+                    + entry.getValue() + "\r\n";
+        }
+
+        logger.info("Анализ нот по высоте:" + "\r\n" + ResultStr);
+        ResultStr = "";
+        Map<Float, Integer> returnhashMapNote = new HashMap<>();
+        for (Map.Entry entry : analysisDuration.GetAnalysis().entrySet()) {
+            ResultStr += entry.getKey() + " : " + entry.getValue() + "\r\n";
+
+        }
+        logger.info("Анализ длительности нот (мс):" + "\r\n" + ResultStr);
+        //logger.info(analysisDuration.GetAnalysis());
 
     }
 }

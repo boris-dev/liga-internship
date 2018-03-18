@@ -4,6 +4,7 @@ import ru.liga.songtask.domain.NoteSign;
 import ru.liga.songtask.domain.SimpleMidiFile;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class AnalysisDiapoz {
     private final SimpleMidiFile simpleMidiFile;
@@ -13,8 +14,9 @@ public class AnalysisDiapoz {
         this.simpleMidiFile=simpleMidiFile;
     }
 
-    public  String GetAnalysis()
+    public  List<String> GetAnalysis()
     {
+        List<String> returnList = new ArrayList<>();
         int maxIndex= 0;
         int minIndex = 0;
         for (int i = 0; i < simpleMidiFile.vocalNoteList().size(); i++) {
@@ -28,11 +30,11 @@ public class AnalysisDiapoz {
         }
         String max = simpleMidiFile.vocalNoteList().get(maxIndex).sign().fullName();
         String min = simpleMidiFile.vocalNoteList().get(minIndex).sign().fullName();
-        int diapozon=simpleMidiFile.vocalNoteList().get(maxIndex).sign().getMidi() - simpleMidiFile.vocalNoteList().get(minIndex).sign().getMidi();
-        return "Анализ диапазона:\r\n" +
-                "верхняя: " + max + "\r\n" +
-                "нижняя: " + min + "\r\n" +
-                "диапазон: " + diapozon + "\r\n";
+        String diapozon=Integer.toString(simpleMidiFile.vocalNoteList().get(maxIndex).sign().getMidi() - simpleMidiFile.vocalNoteList().get(minIndex).sign().getMidi());
+        returnList.add(max);
+        returnList.add(min);
+        returnList.add(diapozon);
+        return returnList;
     }
 
 }

@@ -12,7 +12,7 @@ public class AnalysisHeight {
         this.simpleMidiFile = simpleMidiFile;
     }
 
-    public String GetAnalysis() {
+    public Map<String, Integer> GetAnalysis() {
         Map<String, Integer> hashMapNote = new HashMap<>();
         for (int i = 0; i < simpleMidiFile.vocalNoteList().size(); i++) {
 
@@ -25,6 +25,7 @@ public class AnalysisHeight {
             ResultStr += entry.getKey() + " : "
                     + entry.getValue() + "\r\n";
         }
-        return "Анализ нот по высоте:" + "\r\n" + ResultStr;
+        return hashMapNote;
+      //  return "Анализ нот по высоте:" + "\r\n" + ResultStr;
     }
 }
