@@ -1,6 +1,5 @@
 package ru.liga.songtask.domain;
 
-
 import com.leff.midi.event.NoteOn;
 
 /**

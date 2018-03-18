@@ -5,11 +5,11 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 public class Student {
-    private Integer course;
-    private String fio;
-    private LocalDate birthDate;
-    private Boolean allExamsPassed;
-    private Boolean finished;
+    private final Integer course;
+    private final String fio;
+    private final LocalDate birthDate;
+    private final Boolean allExamsPassed;
+    private final Boolean finished;
 
     public Student(Integer course, String fio, LocalDate birthDate, Boolean allExamsPassed, Boolean finished) {
         this.course = course;
@@ -23,41 +23,41 @@ public class Student {
         return course;
     }
 
-    public void setCourse(Integer course) {
+    /*public void setCourse(Integer course) {
         this.course = course;
-    }
+    }*/
 
     public String getFio() {
         return fio;
     }
 
-    public void setFio(String fio) {
+    /*public void setFio(String fio) {
         this.fio = fio;
-    }
+    }*/
 
     public LocalDate getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(LocalDate birthDate) {
+    /*public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
-    }
+    }*/
 
     public Boolean getAllExamsPassed() {
         return allExamsPassed;
     }
 
-    public void setAllExamsPassed(Boolean allExamsPassed) {
+   /* public void setAllExamsPassed(Boolean allExamsPassed) {
         this.allExamsPassed = allExamsPassed;
-    }
+    }*/
 
     public Boolean getFinished() {
         return finished;
     }
 
-    public void setFinished(Boolean finished) {
+    /*public void setFinished(Boolean finished) {
         this.finished = finished;
-    }
+    }*/
 
     @Override
     public boolean equals(Object o) {

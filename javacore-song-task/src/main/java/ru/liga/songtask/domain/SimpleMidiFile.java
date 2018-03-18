@@ -64,6 +64,7 @@ public class SimpleMidiFile {
         Tempo tempo = (Tempo) (midiFile.getTracks().get(0).getEvents()).stream()
                 .filter(value -> value instanceof Tempo)
                 .findFirst()
+
                 .get();
         return (60 * 1000) / (tempo.getBpm() * midiFile.getResolution());
     }
