@@ -38,7 +38,8 @@ public class StudentServiceTest {
         List<Student> beforeStudents = Arrays.asList(
                 new Student(1, "Афанасьев Александр Григорьевич", LocalDate.of(1998, Month.APRIL, 12), true, false),
                 new Student(2, "Архангельский Иван Дмитриевич", LocalDate.of(1990, Month.JANUARY, 14), false, false),
-                new Student(5, "Булатов Алексей Андреевич", LocalDate.of(1995, Month.MAY, 2), true, false)
+                new Student(5, "Булатов Алексей Андреевич", LocalDate.of(1995, Month.MAY, 2), true, false),
+                new Student(5, "Коба Владимир Игоревич", LocalDate.of(1988, Month.MAY, 2), true, true)
         );
         List<Student> afterStudents = new StudentService().transferStudentsToNextCourse(beforeStudents);
 
