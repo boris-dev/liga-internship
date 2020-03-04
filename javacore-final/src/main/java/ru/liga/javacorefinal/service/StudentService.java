@@ -18,15 +18,12 @@ public class StudentService {
         for (Student student : students) {
 
             if (student.getAllExamsPassed()) {
-                Student st;
                 if (student.getCourse().equals(5)) {
-                    st=new Student(student.getCourse(), student.getFio(), student.getBirthDate(), student.getAllExamsPassed(), true);
-
+                    student.setFinished(true);
                 } else {
-                    st=new Student(student.getCourse() + 1, student.getFio(), student.getBirthDate(), student.getAllExamsPassed(), false);
-
+                    student.setCourse(student.getCourse() + 1);
                 }
-                resultList.add(st);
+                resultList.add(student);
             }
         }
         return resultList;

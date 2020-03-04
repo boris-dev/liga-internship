@@ -32,9 +32,7 @@ public class StudentServiceTest {
         );
     }
 
-    /**
-     *
-     */
+
     @Test
     public void studentsWhoJustFinishedEducationTest() {
         List<Student> beforeStudents = Arrays.asList(
