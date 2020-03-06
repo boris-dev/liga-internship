@@ -143,7 +143,7 @@ public enum NoteSign {
         return Stream.of(values())
                 .filter(value -> value.getMidi().equals(midiNumber))
                 .findFirst()
-                .get();
+                .orElse(NULL_VALUE);
     }
 
 

@@ -34,5 +34,12 @@ public class Note {
         return startTick + durationTicks;
     }
 
-
+    @Override
+    public String toString() {
+        return "{" +
+                note.fullName() +
+                ", S|" + startTick +
+                ", D|" + durationTicks +
+                '}';
+    }
 }
