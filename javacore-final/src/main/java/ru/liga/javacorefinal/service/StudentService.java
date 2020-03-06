@@ -2,6 +2,7 @@ package ru.liga.javacorefinal.service;
 
 import ru.liga.javacorefinal.domain.Student;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -16,14 +17,12 @@ public class StudentService {
     public List<Student> transferStudentsToNextCourse(List<Student> students) {
         List<Student> resultList = new ArrayList<>();
         for (Student student : students) {
-
             if (student.getAllExamsPassed()) {
                 if (student.getCourse().equals(5)) {
-                    student.setFinished(true);
+                    resultList.add(student.withFinished(true));
                 } else {
-                    student.setCourse(student.getCourse() + 1);
+                    resultList.add(student.withCourse(student.getCourse() + 1));
                 }
-                resultList.add(student);
             }
         }
         return resultList;

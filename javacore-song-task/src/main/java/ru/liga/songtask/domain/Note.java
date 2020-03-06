@@ -34,13 +34,5 @@ public class Note {
         return startTick + durationTicks;
     }
 
-    public boolean equalsToNoteOn(NoteOn noteOn) {
-        return startTick().equals(noteOn.getTick()) && sign().getMidi().equals(noteOn.getNoteValue());
-    }
-
-    public boolean isInAccuracyInterval(Long tick) {
-        return (tick >= startTick - durationTicks) && (tick <= startTick + durationTicks * 2);
-    }
-
 
 }

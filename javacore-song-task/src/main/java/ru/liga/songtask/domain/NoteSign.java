@@ -163,28 +163,8 @@ public enum NoteSign {
         return frequency_hz;
     }
 
-    public boolean higher(NoteSign note) {
-        return frequency_hz > note.frequency_hz;
-    }
-
-    public boolean lower(NoteSign note) {
-        return frequency_hz < note.frequency_hz;
-    }
-
     public String fullName() {
         return noteName + octave;
-    }
-
-    public Integer moreThanInSemitones(NoteSign highNote) {
-        return midi - highNote.getMidi();
-    }
-
-    public Integer diffInSemitones(NoteSign highNote) {
-        return Math.abs(midi - highNote.getMidi());
-    }
-
-    public boolean inRange(NoteSign from, NoteSign to) {
-        return !this.lower(from) && !this.higher(to);
     }
 
     public String shortName() {
