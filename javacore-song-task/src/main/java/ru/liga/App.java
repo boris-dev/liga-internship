@@ -24,6 +24,7 @@ public class App {
      * Это пример работы, можете всё стирать и переделывать
      * Пример, чтобы убрать у вас начальный паралич разработки
      * Также посмотрите класс SongUtils, он переводит тики в миллисекунды
+     * Tempo может быть только один
      */
     public static void main(String[] args) throws IOException {
         MidiFile midiFile = new MidiFile(new FileInputStream("C:\\Users\\Xiaomi\\IdeaProjects\\liga-internship\\javacore-song-task\\src\\main\\resources\\Wrecking Ball.mid"));
